@@ -1,14 +1,41 @@
-# Welcome to your CDK TypeScript project
+# FastAPI Lambda Web Adapter Sample
 
-This is a blank project for CDK development with TypeScript.
+このリポジトリは、AWS Lambda 上で FastAPI を使用するためのサンプルプロジェクトです。AWS CDK を使用して、Lambda 関数とその依存関係をデプロイします。
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## 構成
 
-## Useful commands
+- **FastAPI**: Python で書かれた Web フレームワーク。
+- **AWS Lambda**: サーバーレスコンピューティングサービス。
+- **AWS CDK**: インフラストラクチャをコードとして管理するためのツール。
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+## 必要な環境
+
+- Node.js (バージョン 20.x)
+- Python (バージョン 3.13.x)
+
+## セットアップ
+
+1. リポジトリをクローンします。
+
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   ```
+
+2. 依存関係をインストールします。
+
+   ```bash
+   npm install
+   ```
+
+   ```bash
+   pip install -r src/layer/requirements.txt
+   ```
+
+## コマンド
+
+以下のコマンドを使用してプロジェクトをデプロイできます。
+
+- `npx cdk deploy`: スタックをデフォルトの AWS アカウント/リージョンにデプロイします。
+- `npx cdk diff`: デプロイされたスタックと現在の状態を比較します。
+- `npx cdk synth`: 合成された CloudFormation テンプレートを出力します。
