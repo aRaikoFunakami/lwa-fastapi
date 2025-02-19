@@ -7,6 +7,8 @@ export class Stack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    const lambdaAdapterLayerArn = `arn:aws:lambda:${this.region}:753240598075:layer:LambdaAdapterLayerArm64:24`;
+
     const layer = new python.PythonLayerVersion(this, "Layer", {
       entry: "src/layer",
       compatibleRuntimes: [lambda.Runtime.PYTHON_3_13],
@@ -24,7 +26,7 @@ export class Stack extends cdk.Stack {
         lambda.LayerVersion.fromLayerVersionArn(
           this,
           "LambdaAdapterLayerArm64",
-          "arn:aws:lambda:ap-northeast-1:753240598075:layer:LambdaAdapterLayerArm64:24"
+          lambdaAdapterLayerArn,
         ),
       ],
       environment: {
